@@ -5,7 +5,8 @@ INSERT INTO Prime (Name, Quantity)
 		('Burston', 0),
 		('Tipedo', 0),
 		('Gram', 1),
-		('Pyrana', 0);
+		('Pyrana', 0),
+		('Ballistica', 1);
 
 INSERT INTO Component (Name, Prime, Owned, Required)
 	VALUES
@@ -17,7 +18,9 @@ INSERT INTO Component (Name, Prime, Owned, Required)
 		('Gram Prime Blade', 'Gram', 2, 1),
 		('Gram Prime Handle', 'Gram', 0, 1),
 		('Pyrana Prime Barrel', 'Pyrana', 1, 1),
-		('Pyrana Prime Receiver', 'Pyrana', 0, 1);
+		('Pyrana Prime Receiver', 'Pyrana', 0, 1),
+		('Forma', NULL, 8, 1),
+		('Ballistica Prime Receiver', 'Ballistica', 0, 1);
 
 SELECT p.Name as Prime, c.Name as Component from Component c INNER JOIN Prime p ON c.Prime = p.Name;
 

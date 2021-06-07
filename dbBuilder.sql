@@ -26,3 +26,11 @@ CREATE TABLE Component
 	CONSTRAINT Component_PK PRIMARY KEY (Name),
 	CONSTRAINT Prime_FK FOREIGN KEY (Prime) REFERENCES Prime(Name)
 	);
+
+CREATE TABLE Rewards
+	(Component VARCHAR(50) NOT NULL,
+	RelicTier VARCHAR(10) NOT NULL,
+	RelicId VARCHAR(5) NOT NULL,
+	CONSTRAINT Component_FK FOREIGN KEY (Component) REFERENCES Component(Name),
+	CONSTRAINT Relic_FK FOREIGN KEY (RelicTier, RelicId) REFERENCES Relic(Tier, Id)
+	);
